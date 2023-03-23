@@ -15,10 +15,10 @@ setInterval(() => {
 
 function processUploadedImages(job) {
     try {
-        let counter = 0;
-        for (let i = 0; i < 1000000000; i++) {
-            counter++;
-        };
+        // let counter = 0;
+        // for (let i = 0; i < 1000000000; i++) {
+        //     counter++;
+        // };
         console.log(counter);
         //The data added to the queue was stringified,
         //Sharp needs buffer data not string
