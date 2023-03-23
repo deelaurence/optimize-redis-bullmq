@@ -1,0 +1,230 @@
+* {
+    
+    font-family: space grotesk;
+}
+
+.input-hide {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: 1s;
+    
+}
+input,button,a{
+    transition: 1s;
+}
+.button-shift{
+    transition: 1s;
+    transform: translateY(-70px);
+}
+body {
+    background-image: linear-gradient(#ffffff, #ffffff);
+    color: #222222;
+}
+
+input[type="checkbox"] {
+    filter: grayscale(100%);
+}
+
+form,
+button {
+    background: transparent;
+}
+
+input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    /* border-left:6px solid grey; */
+    border-bottom: 1px solid grey;
+    width: 200px;
+    /* color: #fafafa; */
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.home-wrapper>p {
+    text-align: center;
+    border-bottom: 100px;
+}
+
+
+form {
+    display: flex;
+    padding-bottom: 200px;
+    margin-top: 40px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    /* border: solid 1px red; */
+    /* text-align: center; */
+    /* margin-left: 50%; */
+    /* margin-right: auto; */
+
+}
+
+form {
+    gap: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+
+p {
+    margin-bottom: 20px;
+}
+
+a:link,
+a:visited {
+    color: #00bcd4;
+}
+
+/** Styles for the "Choose File"  button **/
+button[type="submit"] {
+    background: none;
+    border: 1px solid #00606d;
+    padding: 10px 30px;
+    width: 200px;
+    transition: all 1s;
+}
+
+button[type="submit"]:hover {
+    background: orange;
+    color: white;
+
+}
+
+.button2 {
+    background: none;
+    border: 1px solid #00606d;
+    padding: 10px 30px;
+    width: 200px;
+    text-align: center;
+    color: white !important;
+    text-decoration: none;
+    transition: all 1s;
+    background: orange;
+}
+
+/* .button2:hover {
+    background: white;
+    color: black;
+} */
+
+form {
+    position: relative;
+}
+
+/** Styles for the "Upload Image"  button **/
+input[type="file"]::file-selector-button {
+    border: 1px solid #51bb65;
+    padding: 4px 5px;
+
+    /* position: absolute;
+    right: 0; */
+    color: #00606d;
+    /* border-radius: 0.2em; */
+    background-color: transparent;
+}
+
+/* .select-image {
+    width: 80px;
+    position: relative;
+    height: 20px;
+    transform: rotate(2deg);
+    display: block;
+
+} */
+
+.select-image>div {
+    width: 80px;
+    border: #00bcd4 solid 1px;
+    z-index: 10;
+    position: absolute;
+    height: 20px;
+    transform: rotate(2deg);
+    display: block;
+    /* background: green; */
+
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+label {
+    margin-left: 0;
+    max-width: 200px;
+    display: inline;
+}
+
+
+
+.home-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.home-wrapper>p {
+    font-size: 12px;
+    margin-top: -13px;
+    font-style: italic;
+}
+
+.gallery-wrapper,
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    position: relative;
+}
+
+
+footer {
+    height: 200px;
+    width: 120vw;
+    transform: rotate(5deg);
+    position: absolute;
+    bottom: -100px;
+    left: -50px;
+    background: #222222;
+}
+
+h1>span {
+    font-weight: 200;
+}
+
+.original-size-cont {
+    /* border: solid 1px red; */
+    display: flex;
+    width: 200px;
+}
+
+.original-size-cont>span {
+    /* border: solid 1px red; */
+    margin-left: 10px;
+}
+
+.original-size {
+    width: auto;
+    /* border: solid 1px red; */
+}

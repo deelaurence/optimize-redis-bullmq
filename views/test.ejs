@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      /* border: 1px solid white; */
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow: hidden;
+
+      font-family: space grotesk;
+    }
+    html {
+      overflow-y: scroll;
+    }
+    .column1 {
+      background: red;
+    }
+
+    .column2 {
+      background: rebeccapurple;
+    }
+
+    .column3 {
+      background: white;
+    }
+
+    .column4 {
+      background: greenyellow;
+    }
+
+    /* selecting the four section */
+    section {
+      height: 100vh;
+      width: 24vw;
+    }
+
+    main {
+      display: flex;
+      flex-direction: row;
+      /* text-align: center; */
+      justify-content: center;
+      align-items: center;
+      /* background: pink; */
+      /* height: 400px; */
+    }
+
+    .s1-child1 {
+      height: 40%;
+      width: 100%;
+      background: white;
+    }
+
+    .s1-child2 {
+      height: 60%;
+      width: 100%;
+      background: orange;
+    }
+
+    .s2-child1 {
+      height: 33.3%;
+      width: 100%;
+    }
+
+    .s2-child2 {
+      height: 33.3%;
+      width: 100%;
+    }
+
+    .s2-child3 {
+      height: 33.3%;
+      width: 100%;
+    }
+
+    .s3-child1 {
+      height: 30%;
+      width: 100%;
+    }
+    .s3-child2 {
+      height: 30%;
+      width: 100%;
+      background: white;
+      /* display: flex; */
+      /* justify-content: center;
+      align-items: center; */
+    }
+    .s3-child2 > p {
+      /* transform: rotate(90deg); */
+      /* transform-origin: center; */
+    }
+    .s3-child2 > img {
+      filter: grayscale(0) !important;
+    }
+    .s1-child2 > img {
+      filter: grayscale(65%) !important;
+    }
+    .s4-child2 > img {
+      filter: grayscale(85%) !important;
+    }
+    .s3-child3 {
+      height: 30%;
+      width: 100%;
+    }
+
+    .s4-child1 {
+      height: 33.3%;
+      width: 100%;
+    }
+
+    .s4-child2 {
+      height: 33.3%;
+      width: 100%;
+    }
+
+    .s4-child3 {
+      height: 33.3%;
+      width: 100%;
+    }
+
+    section > div > img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      filter: grayscale(90%);
+      transition: 1s;
+    }
+
+    section > div > img:hover {
+      filter: none;
+      transform: scale(1.1);
+    }
+
+    section > div {
+      position: relative;
+    }
+
+    section > div > p {
+      color: white;
+      border: none;
+      position: absolute;
+      bottom: -20px;
+      font-size: 12px;
+      padding: 6px;
+      transition: 1s;
+    }
+    @media (max-width: 700px) {
+      section {
+        height: 60vh;
+      }
+    }
+  </style>
+  <body>
+    <main>
+      <section class="column1">
+        <div class="s1-child1">
+          <img
+            id="img1"
+            src="https://images.unsplash.com/photo-1552234994-66ba234fd567?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cG90cmFpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60"
+            alt=""
+          />
+        </div>
+        <div class="s1-child2">
+          <img
+            id="img2"
+            src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cG90cmFpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60"
+            alt=""
+          />
+        </div>
+      </section>
+      <section class="column2">
+        <div class="s2-child1">
+          <img
+            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cG90cmFpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60"
+            alt=""
+          />
+        </div>
+        <div class="s2-child2">
+          <img
+            src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvdHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
+            alt=""
+          />
+        </div>
+        <div class="s2-child3">
+          <img
+            src="https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHBvdHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
+            alt=""
+          />
+        </div>
+      </section>
+      <section class="column3">
+        <div class="s3-child1">
+          <img
+            src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBvdHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
+            alt=""
+          />
+        </div>
+        <div class="s3-child2">
+          <img
+            src="https://cdn.dribbble.com/users/210795/screenshots/16073734/media/cab58d1106fe8b9e903ea49676e3133f.png?compress=1&resize=400x300"
+            alt=""
+          />
+        </div>
+        <div class="s3-child3">
+          <img
+            src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cG90cmFpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60"
+            alt=""
+          />
+        </div>
+      </section>
+      <section class="column4">
+        <div class="s4-child1">
+          <img
+            src="https://images.unsplash.com/photo-1493106819501-66d381c466f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cG90cmFpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60"
+            alt=""
+          />
+        </div>
+        <div class="s4-child2">
+          <img
+            src="https://images.unsplash.com/photo-1602077422495-c8733eb58c34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fHBvdHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
+            alt=""
+          />
+        </div>
+        <div class="s4-child3">
+          <img
+            src="https://images.unsplash.com/photo-1610862169846-80fb009ed591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fHBvdHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60"
+            alt=""
+          />
+        </div>
+      </section>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
