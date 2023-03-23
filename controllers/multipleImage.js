@@ -25,7 +25,7 @@ const multipleImage = new Queue("multipleImage", {
 //The function that would be called when the multiple image upload 
 //route is hit
 async function addJob(job) {
-    await multipleImage.add(job.type, job);
+    await multipleImage.add(job.type, job, { removeOnComplete: 5, removeOnFail: 5 });
 }
 
 //creating time stamps for logs
@@ -96,6 +96,7 @@ const multipleImageUpload = async (req, res) => {
                             folderName,
                             data: Buffer.from(image.data).toString("base64"),
                         },
+
                     });
 
                 });

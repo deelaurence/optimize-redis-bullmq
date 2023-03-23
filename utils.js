@@ -19,7 +19,6 @@ function processUploadedImages(job) {
         // for (let i = 0; i < 1000000000; i++) {
         //     counter++;
         // };
-        console.log(counter);
         //The data added to the queue was stringified,
         //Sharp needs buffer data not string
         const imageFileData = Buffer.from(job.image.data, "base64");
@@ -43,7 +42,6 @@ function processUploadedImages(job) {
 
     } catch (error) {
         console.log(error);
-        res.send(error.message)
     }
 
 }
