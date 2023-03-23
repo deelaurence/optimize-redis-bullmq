@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"forever start -a -l forever.log -o out.log -e err.log -c node index.js\" \"forever start -a -l forever.log -o out.log -e err.log -c node worker.js\"",
+    "start": "concurrently \"node index.js\" \"node worker.js\"",
     "dev": "nodemon index.js"
   },
   "author": "",
