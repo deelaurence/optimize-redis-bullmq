@@ -85,7 +85,7 @@ const multipleImageUpload = async (req, res) => {
         }
 
         //Make a new directory with the folder name
-        const newDir = fs.mkdir(path.join(`./public/images/${folderName}`), (err) => {
+        const newDir = fs.mkdirSync(path.join(`./public/images/${folderName}`), (err) => {
             try {
                 if (err) {
                     fs.rmSync(path.join(`./public/images/${folderName}`), { recursive: true, force: true });
