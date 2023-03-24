@@ -20,7 +20,7 @@
           placeholder="Select image from your computer"
         />
 
-        <button type="submit">Upload Image</button>
+        <button onmouseover="handleHover" type="submit">Upload Image</button>
       </form>
     </div>
     <%- include('./test'); %>
@@ -28,23 +28,26 @@
   <script>
     const status = document.querySelector("#status");
     const statusCont = document.querySelector(".status-cont");
-    // const url = "http://localhost:3000/status"
-    const url = "https://optimize-webp-v2.onrender.com/status";
-
+    const url = "http://localhost:3000/status";
+    // const url = "https://optimize-webp-v2.onrender.com/status";
+    const handleHover = () => {
+      console.log("clickd");
+      statusCont.style.display = "block";
+    };
+    const button = document.querySelector("button");
+    button.addEventListener("click", handleHover);
     setInterval(() => {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
-          status.innerHTML = data.status;
+          // status.innerHTML = data.status;
           console.log(status);
           if (data.status == "yes") {
             statusCont.style.display = "none";
           }
-          if (data.status == "no") {
-            statusCont.style.display = "none";
-          } else {
-            statusCont.style.display = "none";
-          }
+          // } else {
+          //   statusCont.style.display = "none";
+          // }
           console.log(data);
         });
     }, 2000);

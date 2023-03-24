@@ -35,11 +35,7 @@ function processUploadedImages(job) {
             await sharp(imageFileData)
                 .webp({ quality: 90 })
                 .toFile(`./public/images/${folderName}/${imageName}.webp`);
-
-
         processImage()
-
-
     } catch (error) {
         console.log(error);
     }

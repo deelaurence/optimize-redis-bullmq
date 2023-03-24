@@ -50,7 +50,7 @@ const multipleImageUpload = async (req, res) => {
     //This is the logic that processes uploaded files
     statusMessage = 'no'
     setTimeout(() => {
-        statusMessage = 'no'
+        statusMessage = 'yes'
     }, 30000);
     try {
 
@@ -85,14 +85,13 @@ const multipleImageUpload = async (req, res) => {
         }
 
         //Make a new directory with the folder name
-        const newDir = fs.mkdirSync(path.join(`./public/images/${folderName}`), (err) => {
+        const newDir = fs.mkdir(path.join(`./public/images/${folderName}`), (err) => {
             try {
                 if (err) {
                     fs.rmSync(path.join(`./public/images/${folderName}`), { recursive: true, force: true });
                     throw new Error("Couldnt make directory");
-
                 }
-
+                console.log(time + "--directory created")
                 //For each image in the array, Add to the queue
                 //with the addJob() method
                 req.files.image.forEach(async (image) => {
@@ -112,6 +111,7 @@ const multipleImageUpload = async (req, res) => {
                             },
 
                         });
+                        console.log(`Added ${image.name} to the queue`);
 
                     } catch (error) {
                         console.log(error);

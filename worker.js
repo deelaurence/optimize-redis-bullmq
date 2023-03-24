@@ -9,7 +9,6 @@ const { processUploadedImages } = require("./utils");
 
 const workerHandler = async (job) => {
     try {
-
         console.log(time + "--" + "Starting job:", job.data.image.name);
         processUploadedImages(job.data);
         return job.data.image.name;
@@ -25,7 +24,7 @@ const workerOptions = {
         password: process.env.REDIS_PASSWORD,
     },
 
-    lockDuration: 9000000
+    // lockDuration: 9000000
 
 };
 
