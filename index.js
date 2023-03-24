@@ -26,7 +26,13 @@ const { ExpressAdapter } = require("@bull-board/express");
 
 
 const { singleImageUpload, processSingleImage } = require('./controllers/singleImage')
-const { multipleImageUpload, multipleImageDownload, multipleImage } = require('./controllers/multipleImage')
+const {
+    multipleImageUpload,
+    multipleImageDownload,
+    form2,
+    form2Status,
+    multipleImage,
+} = require('./controllers/multipleImage')
 
 
 
@@ -58,14 +64,14 @@ app.use(fileUpload());
 app.use(express_1.default.static("public"));
 
 //Homepage
+let ready = false
 app.get("/", function (req, res) {
     res.render("form");
-});
-app.get("/form2", function (req, res) {
-    res.render("gallery");
-});
 
+});
+app.get("/form2", form2);
 
+app.get("/status", form2Status)
 
 
 

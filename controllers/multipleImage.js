@@ -21,6 +21,15 @@ const redisOptions = {
 const multipleImage = new Queue("multipleImage", {
     connection: redisOptions,
 });
+let statusMessage;
+const form2 = (req, res) => {
+    res.render("gallery", { statusMessage });
+}
+const form2Status = (req, res) => {
+    res.json({ status: statusMessage });
+}
+
+
 
 //The function that would be called when the multiple image upload 
 //route is hit
@@ -39,18 +48,20 @@ setInterval(() => {
 
 const multipleImageUpload = async (req, res) => {
     //This is the logic that processes uploaded files
-
+    statusMessage = 'no'
     try {
 
         // Check for null input
         if (!req.files) {
             let message = "Please select some images"
+            statusMessage = "yes"
             return res.render("error", { message })
         }
         //Check if user uploads any file that is not an image
         req.files.image.forEach((image) => {
             if (!image.mimetype.includes("image")) {
                 let message = "Please Select Only Images"
+                statusMessage = "yes"
                 return res.render("error", { message })
             }
         })
@@ -82,22 +93,30 @@ const multipleImageUpload = async (req, res) => {
                 //For each image in the array, Add to the queue
                 //with the addJob() method
                 req.files.image.forEach(async (image) => {
+                    try {
+                        //QUEUE STEP ONE:
+                        //[A] Add the stringified image data (image.data) to
+                        //to the job queue
+                        //[B] Add the images name and the folder name as well
+                        //This is important to point the worker into the directory to place
+                        //the processed image
+                        await addJob({
+                            type: "multipleImage",
+                            image: {
+                                name: image.name,
+                                folderName,
+                                data: Buffer.from(image.data).toString("base64"),
+                            },
 
-                    //QUEUE STEP ONE:
-                    //[A] Add the stringified image data (image.data) to
-                    //to the job queue
-                    //[B] Add the images name and the folder name as well
-                    //This is important to point the worker into the directory to place
-                    //the processed image
-                    await addJob({
-                        type: "multipleImage",
-                        image: {
-                            name: image.name,
-                            folderName,
-                            data: Buffer.from(image.data).toString("base64"),
-                        },
+                        });
 
-                    });
+                    } catch (error) {
+                        console.log(error);
+                        statusMessage = "yes"
+                        return res.render("error", { message })
+
+                    }
+
 
                 });
 
@@ -118,6 +137,12 @@ const multipleImageUpload = async (req, res) => {
     } catch (error) {
         console.log(time + "--" + error.message);
         const { message } = error
+        if (message.length > 45) {
+
+            statusMessage = "yes"
+            return res.render("error", { message: "Something went very wrong, Try again with new set of pictures" })
+        }
+        statusMessage = "yes"
         return res.render("error", { message })
     }
 }
@@ -180,14 +205,15 @@ const multipleImageDownload = async (req, res) => {
                 console.error(error)
             }
 
-        }, 15000);
+        }, 3000);
         const interval2Id = setInterval(async () => {
             console.log(time + "--" + fullyprocessed, imgFiles);
             if (fullyprocessed) {
                 console.log(time + "--" + "zipping already");
-                clearInterval(intervalId)
+                clearInterval(intervalId);
                 console.log(time + "--" + "Cleared interval one");
                 await res.zip(imgFiles);
+                statusMessage = 'yes'
                 clearInterval(interval2Id)
                 console.log(time + "--" + "Cleared interval two");
                 //Delete folder after some time (30 minutes)
@@ -196,15 +222,16 @@ const multipleImageDownload = async (req, res) => {
                     console.log("Deleted " + imgDirPath);
                 }, 1800000);
             }
-        }, 20000);
+        }, 5000);
 
         //pass the array of object into the zip function.  
     } catch (error) {
         console.log(time + "--" + error);
+
         return res.render('error', { message: error.message })
     }
 }
 
 
 
-module.exports = { multipleImageDownload, multipleImageUpload, multipleImage }
+module.exports = { multipleImageDownload, multipleImageUpload, form2, form2Status, multipleImage }
