@@ -49,6 +49,9 @@ setInterval(() => {
 const multipleImageUpload = async (req, res) => {
     //This is the logic that processes uploaded files
     statusMessage = 'no'
+    setTimeout(() => {
+        statusMessage = 'no'
+    }, 30000);
     try {
 
         // Check for null input
