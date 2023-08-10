@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./head'); %>
+  <body style="text-align: center">
+    <div>
+      <img src="/200w.gif" alt="" />
+    </div>
+    <!-- <h1>Oops!</h1> -->
+    <p><%= message %></p>
+  </body>
+  <style>
+    h1 {
+      margin-bottom: 100px;
+    }
+    div {
+      position: absolute;
+      left: 50vw;
+      top: 40vh;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      margin-top: -30px;
+      width: 90vw;
+      max-width: 400px;
+      /* justify-self: flex-end; */
+      /* align-self: flex-start; */
+    }
+
+    p {
+      position: absolute;
+      top: 70vh;
+      left: 50vw;
+      font-size: 20px;
+      max-width: 80vw;
+      /* color: orangered; */
+      transform: translate(-50%, -50%);
+      background: rgba(257, 257, 257, 0.9);
+    }
+  </style>
+</html>

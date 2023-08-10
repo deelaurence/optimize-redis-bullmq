@@ -1,0 +1,114 @@
+undefinedWorker started!
+5:52--Starting job: cropped.jpg
+5:52 -- sharp processing starting for cropped
+6:0--completed cropped.jpg
+6:0--Starting job: crypto-api.png
+6:0 -- sharp processing starting for crypto-api
+6:16--completed crypto-api.png
+6:16--Starting job: Desktop - 1.png
+6:16 -- sharp processing starting for Desktop - 1
+6:50--completed Desktop - 1.png
+6:50--Starting job: e3ec3f55030205.5974446dcd299.jpg
+6:50 -- sharp processing starting for e3ec3f55030205.5974446dcd299
+6:50--completed e3ec3f55030205.5974446dcd299.jpg
+{
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/cropped.webp',
+    name: 'cropped.webp'
+  },
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/crypto-api.webp',
+    name: 'crypto-api.webp'
+  }
+]
+6:22--[object Object],[object Object],[object Object] false
+6:22--353388
+6:22--123662
+6:22--103358
+6:33--Starting job: cropped2.jpg
+6:33 -- sharp processing starting for cropped2
+6:37--false [
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/cropped.webp',
+    name: 'cropped.webp'
+  },
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/crypto-api.webp',
+    name: 'crypto-api.webp'
+  },
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/Desktop - 1.webp',
+    name: 'Desktop - 1.webp'
+  }
+]
+6:37--[object Object],[object Object],[object Object],[object Object] false
+6:37--353388
+6:37--323976
+6:37--123662
+6:37--103358
+6:39--completed cropped2.jpg
+6:39--Starting job: flo.png
+6:39 -- sharp processing starting for flo
+6:41--completed flo.png
+6:41--Starting job: flo2.png
+6:41 -- sharp processing starting for flo2
+6:42--completed flo2.png
+6:42--Starting job: flo3.png
+6:42 -- sharp processing starting for flo3
+6:42--completed flo3.png
+6:42--Starting job: for twitter.png
+6:42 -- sharp processing starting for for twitter
+6:42--completed for twitter.png
+6:52--[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object] false
+6:52--353388
+6:52--323976
+6:52--123662
+6:52--103358
+6:52--35802
+6:52--120392
+6:52--101538
+6:52--111110
+6:52--23852
+6:52--0 fully processed
+9 8
+6:57--true [
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/cropped.webp',
+    name: 'cropped.webp'
+  },
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/cropped2.webp',
+    name: 'cropped2.webp'
+  },
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/crypto-api.webp',
+    name: 'crypto-api.webp'
+  },
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/Desktop - 1.webp',
+    name: 'Desktop - 1.webp'
+  },
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/e3ec3f55030205.5974446dcd299.webp',
+    name: 'e3ec3f55030205.5974446dcd299.webp'
+  },
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/flo.webp',
+    name: 'flo.webp'
+  },
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/flo2.webp',
+    name: 'flo2.webp'
+  },
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/flo3.webp',
+    name: 'flo3.webp'
+  },
+  {
+    path: './public/images/8b3149810b19ecacd07b49430642ead8/for twitter.webp',
+    name: 'for twitter.webp'
+  }
+]
+6:57--zipping already
+6:57--Cleared interval one
+6:57--Cleared interval two
+Deleted C:\Users\user\Desktop\dist - Copy\public\images\8b3149810b19ecacd07b49430642ead8

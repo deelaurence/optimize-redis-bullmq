@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./head'); %>
+  <body>
+    <%- include('./test'); %>
+    <div class="home-wrapper">
+      <h1>Optimi<span>z</span>e</h1>
+      <p>
+        Convert your images to
+        <a href="https://en.wikipedia.org/wiki/WebP">webp.</a>
+      </p>
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label class="select-image">
+          <div></div>
+          <input
+            class="uploadTab"
+            type="file"
+            name="image"
+            placeholder="Select image from your computer"
+          />
+        </label>
+        <div class="original-size-cont">
+          <input
+            class="original-size"
+            type="checkbox"
+            name="originalSize"
+            placeholder="Do you want the original dimensions?"
+          />
+          <span class="maintain"> Maintain dimensions?</span>
+        </div>
+
+        <input
+          class="file-name"
+          onfocus="manualNaming()"
+          onblur="this.value=removeSpace(this.value)"
+          required
+          type="text"
+          name="filename"
+          placeholder="input name"
+        />
+        <input
+          class="width-input"
+          type="number"
+          name="filewidth"
+          placeholder="width in pixels"
+        />
+        <input
+          class="height-input"
+          type="number"
+          name="fileheight"
+          placeholder="height in pixels"
+        />
+        <button style="color: #222222" type="submit">Upload Image</button>
+        <a class="button2" href="/form2">Select Bulk?</a>
+      </form>
+    </div>
+    <footer></footer>
+  </body>
+  <script>
+    const uploadTab = document.querySelector(".uploadTab");
+    const uploadName = uploadTab.value;
+    function removeSpace(string) {
+      return string.split(" ").join("");
+    }
+    const autoNaming = setInterval(() => {
+      const inputName = document.querySelector(".file-name");
+      if (uploadTab.value) {
+        try {
+          console.log(uploadTab.value);
+          console.log(typeof uploadTab.value);
+          const filename = uploadTab.value.replace(/^.*[\\\/]/, "");
+          console.log(filename);
+          const extensionless = filename.replace(/\.[^/.]+$/, "");
+          console.log(extensionless);
+          // removeSpace(inputName.value)
+          inputName.value = removeSpace(extensionless);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    }, 1000);
+
+    function manualNaming() {
+      console.log("focused");
+      clearInterval(autoNaming);
+    }
+    let originalSize = document.querySelector(".original-size");
+    let fileHeight = document.querySelector(".height-input");
+    let fileWidth = document.querySelector(".width-input");
+    let buttons = document.querySelectorAll("button");
+    let button2 = document.querySelector(".button2");
+    originalSize.addEventListener("click", () => {
+      fileWidth.classList.toggle("input-hide");
+      fileHeight.classList.toggle("input-hide");
+      buttons.forEach((button) => {
+        button.classList.toggle("button-shift");
+      });
+      button2.classList.toggle("button-shift");
+    });
+    console.log(originalSize.checked);
+
+    setInterval(() => {
+      if (originalSize.checked) {
+        buttons.forEach((button) => {
+          button.classList.add("button-shift");
+        });
+        button2.classList.add("button-shift");
+        fileWidth.classList.add("input-hide");
+        fileHeight.classList.add("input-hide");
+        fileWidth.value = null;
+        fileHeight.value = null;
+      }
+    }, 1000);
+  </script>
+  <style></style>
+</html>

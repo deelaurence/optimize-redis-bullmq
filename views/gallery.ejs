@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./head'); %>
+  <body>
+    <div class="home-wrapper">
+      <div class="status-cont">
+        <div class="lds-ripple">
+          <div></div>
+          <div></div>
+        </div>
+        <p id="status"></p>
+      </div>
+      <h1>Optimize</h1>
+      <p>Upload and convert multiple images at a go!</p>
+      <form action="/gallery" method="POST" enctype="multipart/form-data">
+        <input
+          type="file"
+          multiple
+          name="image"
+          placeholder="Select image from your computer"
+        />
+
+        <button onmouseover="handleHover" type="submit">Upload Image</button>
+      </form>
+    </div>
+    <%- include('./test'); %>
+  </body>
+  <script>
+    const status = document.querySelector("#status");
+    const statusCont = document.querySelector(".status-cont");
+    // const url = "http://localhost:3000/status";
+    const url = "https://optimize-webp-v2.onrender.com/status";
+    const handleHover = () => {
+      console.log("clickd");
+      statusCont.style.display = "block";
+    };
+    const button = document.querySelector("button");
+    button.addEventListener("click", handleHover);
+    setInterval(() => {
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          // status.innerHTML = data.status;
+          console.log(status);
+          if (data.status == "yes") {
+            statusCont.style.display = "none";
+          }
+          // } else {
+          //   statusCont.style.display = "none";
+          // }
+          console.log(data);
+        });
+    }, 15000);
+
+    // console.log(message);
+    function removeSpace(string) {
+      return string.split(" ").join("");
+    }
+  </script>
+  <style>
+    * {
+      transition: 0.5s;
+      font-family: space grotesk;
+    }
+    .input-hide {
+      visibility: hidden;
+      opacity: 0;
+    }
+    .status-cont {
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      display: none;
+      left: 0;
+      z-index: 999999;
+      background: rgba(0, 0, 0, 0.441);
+    }
+    .lds-ripple {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .lds-ripple div {
+      position: absolute;
+      border: 4px solid #fff;
+      opacity: 1;
+      border-radius: 50%;
+      animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+    .lds-ripple div:nth-child(2) {
+      animation-delay: -0.5s;
+    }
+    @keyframes lds-ripple {
+      0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+      }
+      4.9% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+      }
+      5% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+      }
+      100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+      }
+    }
+  </style>
+</html>

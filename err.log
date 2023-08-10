@@ -1,0 +1,90 @@
+Error: connect ETIMEDOUT
+    at Socket.<anonymous> (C:\Users\user\Desktop\dist - Copy\node_modules\ioredis\built\Redis.js:170:41)
+    at Object.onceWrapper (node:events:627:28)
+    at Socket.emit (node:events:513:28)
+    at Socket._onTimeout (node:net:562:8)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect'
+}
+Error: connect ETIMEDOUT
+    at Socket.<anonymous> (C:\Users\user\Desktop\dist - Copy\node_modules\ioredis\built\Redis.js:170:41)
+    at Object.onceWrapper (node:events:627:28)
+    at Socket.emit (node:events:513:28)
+    at Socket._onTimeout (node:net:562:8)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect'
+}
+Error: connect ETIMEDOUT
+    at Socket.<anonymous> (C:\Users\user\Desktop\dist - Copy\node_modules\ioredis\built\Redis.js:170:41)
+    at Object.onceWrapper (node:events:627:28)
+    at Socket.emit (node:events:513:28)
+    at Socket._onTimeout (node:net:562:8)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect'
+}
+Error: connect ETIMEDOUT
+    at Socket.<anonymous> (C:\Users\user\Desktop\dist - Copy\node_modules\ioredis\built\Redis.js:170:41)
+    at Object.onceWrapper (node:events:627:28)
+    at Socket.emit (node:events:513:28)
+    at Socket._onTimeout (node:net:562:8)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect'
+}
+Error: connect ETIMEDOUT
+    at Socket.<anonymous> (C:\Users\user\Desktop\dist - Copy\node_modules\ioredis\built\Redis.js:170:41)
+    at Object.onceWrapper (node:events:627:28)
+    at Socket.emit (node:events:513:28)
+    at Socket._onTimeout (node:net:562:8)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect'
+}
+Error: connect ETIMEDOUT
+    at Socket.<anonymous> (C:\Users\user\Desktop\dist - Copy\node_modules\ioredis\built\Redis.js:170:41)
+    at Object.onceWrapper (node:events:627:28)
+    at Socket.emit (node:events:513:28)
+    at Socket._onTimeout (node:net:562:8)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect'
+}
+(node:13764) [DEP0147] DeprecationWarning: In future versions of Node.js, fs.rmdir(path, { recursive: true }) will be removed. Use fs.rm(path, { recursive: true }) instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Error: connect ETIMEDOUT
+    at Socket.<anonymous> (C:\Users\user\Desktop\dist - Copy\node_modules\ioredis\built\Redis.js:170:41)
+    at Object.onceWrapper (node:events:627:28)
+    at Socket.emit (node:events:513:28)
+    at Socket._onTimeout (node:net:562:8)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect'
+}
+Error: connect ETIMEDOUT
+    at Socket.<anonymous> (C:\Users\user\Desktop\dist - Copy\node_modules\ioredis\built\Redis.js:170:41)
+    at Object.onceWrapper (node:events:627:28)
+    at Socket.emit (node:events:513:28)
+    at Socket._onTimeout (node:net:562:8)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect'
+}
